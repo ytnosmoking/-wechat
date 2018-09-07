@@ -1,106 +1,218 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
-
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
+  <div class='container'>
+    <div class='top'>
+      <div class='diqu'>
+        <div class='diqu_choose'>
+          <picker mode="selector" 
+            :range="cityList" 
+            range-key='name' 
+            :value="cityCode" 
+            @change="changeCity">
+            <div class="picker">
+              {{cityList[cityCode].name}}
+            </div>
+          </picker>
+        </div>
+        <div class='arrow'></div>
+      </div>
+      <div class='title'>品牌公寓</div>
+      <div class='btn_ditu'>
+        <a href='/pages/maps/maps'>
+          <image src='../images/map.png' />
+        </a>
+        <!-- <image src="{{item.imgUrls[0].picUrl}}"></image> -->
       </div>
     </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
+    <div class='bannerBox'>
+      <swiper indicator-dots="true" autoplay="true" interval="3000" duration="2000" circular='true'>
+        <div v-for="(item, index) in imgUrls" :key="index">
+          <swiper-item>
+            <image :src="item.picUrl" />
+          </swiper-item>
+        </div>
+      </swiper>
     </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-    <a href="/pages/counter" class="counter">去往Vuex示例页面</a>
+    <div class='mendian_title'>门店展示</div>
+    <div class='mendian_info' style='text-align:center; color:#999;margin-top:30rpx;margin-bottom:60rpx;' v-if="mendianList">
+      <!-- v-if="mendianList.noData"> -->
+      <!-- {{mendianList.noData}} -->
+    </div>
+    <div class='mendian_info' v-else>
+      <!-- <import src='../../../components/shouye/shouye.wxml' /> -->
+      <!-- <template is='mendian' data='{{mendianList}}' /> -->
+    </div>
+    <div class='bottom'>商业合作：
+      <span>400100000</span>
+    </div>
   </div>
-</template>
 
+</template>
 <script>
-import card from '@/components/card'
+
+import {mapGetters} from 'vuex'
 
 export default {
-  data () {
+  name: "index",
+  data() {
     return {
-      motto: 'Hello World',
-      userInfo: {}
-    }
+      mendianList: [],
+      cityCode: 0,
+      // cityList: [
+      //   {
+      //     city: "北京市",
+      //     cityCode: "010",
+      //     houseItemCount: 77,
+      //     cityid: "d94bba14-dec1-11e5-bcc3-00163e1c066c",
+      //     lat: 39.9135,
+      //     lng: 116.404262
+      //   },
+      //   {
+      //     city: "银川市",
+      //     cityCode: "",
+      //     houseItemCount: 5,
+      //     cityid: "14a8db26-73d8-11e8-bf8c-7cd30ae45df2",
+      //     lat: 38.489977,
+      //     lng: 106.236771
+      //   }
+      // ]
+    };
   },
-
-  components: {
-    card
+  computed: {
+    ...mapGetters([
+      'cityList',
+      'cityCode'
+    ])
   },
-
   methods: {
-    bindViewTap () {
-      const url = '/packageA/logs'
-      wx.navigateTo({ url })
+    changeCity(e) {
+      this.$store.commit('cityCode', e.mp.detail.value)
+      // this.cityCode = e.mp.detail.value
     },
-    getUserInfo () {
-      // 调用登录接口
-      wx.login({
-        success: () => {
-          wx.getUserInfo({
-            success: (res) => {
-              this.userInfo = res.userInfo
-            }
-          })
-        }
-      })
+    getCity() {
+      this.$store.dispatch('getCity')
     },
-    clickHandle (msg, ev) {
-      // eslint-disable-next-line
-      console.log('clickHandle:', msg, ev)
+    getBanners() {
+      this.$store.dispatch('getBanners')
     }
   },
-
-  created () {
-    // 调用应用实例的方法获取全局数据
-    this.getUserInfo()
+  created() {
+    this.getCity()
+    this.getBanners()
   }
-}
+};
 </script>
 
-<style scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+<style lang="less" scoped>
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+/*头部  */
+.top {
+  width: 100%;
+  height: 86rpx;
+  line-height: 46rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20rpx;
+  font-size: 32rpx;
+  box-sizing: border-box;
+  /* display: flex; */
+  background: #fff;
+  z-index: 9;
+  overflow: hidden;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+/*地区选择  */
+.diqu {
+  float: left;
+  width: 50%;
+  height: 46rpx;
+  font-size: 26rpx;
 }
 
-.usermotto {
-  margin-top: 150px;
+.diqu_choose {
+  float: left;
+  max-width: 80%;
+  height: 46rpx;
+  font-size: 26rpx;
+  line-height: 46rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.form-control {
+.arrow {
+  float: left;
+  border-top: 8rpx solid #000;
+  border-right: 8rpx solid transparent;
+  border-bottom: 8rpx solid transparent;
+  border-left: 8rpx solid transparent;
+  margin: 22rpx 0 0 10rpx;
+}
+
+/*标题  */
+.title {
+  width: 100%;
+  height: 46rpx;
+  line-height: 46rpx;
+  text-align: center;
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  z-index: -1;
+}
+
+/*地图找房  */
+.btn_ditu {
+  float: right;
+  width: 50%;
+  height: 46rpx;
+}
+
+.btn_ditu image {
   display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
+  width: 40rpx;
+  height: 40rpx;
+  float: right;
 }
 
-.counter {
-  display: inline-block;
-  margin: 10px auto;
-  padding: 5px 10px;
-  color: blue;
-  border: 1px solid blue;
+/*轮播图  */
+.bannerBox {
+  width: 100%;
+  height: 320rpx;
+  margin-top: 86rpx;
+}
+
+.mendian_title {
+  width: 100%;
+  height: 80rpx;
+  line-height: 40rpx;
+  text-align: center;
+  padding: 25rpx 0 15rpx;
+  box-sizing: border-box;
+}
+
+.mendian_info {
+  width: 100%;
+  height: auto;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+
+.bottom {
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  margin: 30rpx 0;
+}
+
+.bottom span {
+  color: #fbb174;
 }
 </style>

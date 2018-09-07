@@ -10,7 +10,7 @@
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
 	"appid": "touristappid",
-	"projectname": "-wechat",
+	"projectname": "test1",
 	"condition": {
 		"search": {
 			"current": -1,
