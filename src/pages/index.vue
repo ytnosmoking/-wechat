@@ -3,11 +3,7 @@
     <div class='top'>
       <div class='diqu'>
         <div class='diqu_choose'>
-          <picker mode="selector" 
-            :range="cityList" 
-            range-key='name' 
-            :value="cityCode" 
-            @change="changeCity">
+          <picker mode="selector" :range="cityList" range-key='name' :value="cityCode" @change="changeCity">
             <div class="picker">
               {{cityList[cityCode].name}}
             </div>
@@ -48,15 +44,15 @@
 
 </template>
 <script>
-
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex';
 
 export default {
-  name: "index",
+  name: 'index',
   data() {
     return {
       mendianList: [],
       cityCode: 0,
+      imgUrls: []
       // cityList: [
       //   {
       //     city: "北京市",
@@ -78,26 +74,27 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'cityList',
-      'cityCode'
-    ])
+    ...mapGetters(['cityList', 'cityCode'])
   },
   methods: {
     changeCity(e) {
-      this.$store.commit('cityCode', e.mp.detail.value)
+      this.$store.commit('cityCode', e.mp.detail.value);
       // this.cityCode = e.mp.detail.value
     },
     getCity() {
-      this.$store.dispatch('getCity')
+      this.$store.dispatch('getCity');
     },
     getBanners() {
-      this.$store.dispatch('getBanners')
+      this.$store.dispatch('getBanners').then(res => {
+        console.log(`index banner`);
+        console.log(res);
+        this.imgUrls = res.list;
+      });
     }
   },
   created() {
-    this.getCity()
-    this.getBanners()
+    this.getCity();
+    this.getBanners();
   }
 };
 </script>
@@ -185,6 +182,11 @@ export default {
   width: 100%;
   height: 320rpx;
   margin-top: 86rpx;
+  image {
+    width: 100%;
+    height: 320rpx;
+    display: inline-block;
+  }
 }
 
 .mendian_title {

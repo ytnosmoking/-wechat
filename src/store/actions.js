@@ -25,7 +25,7 @@ export default {
       }, {
         title: 'getBanners'
       }).then(res => {
-        return Promise.resolve(res)
+        resolve(res.result)
       }).catch(error => {
         reject(error)
         console.log(error)
