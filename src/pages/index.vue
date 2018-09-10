@@ -5,7 +5,7 @@
         <div class='diqu_choose'>
           <picker mode="selector" :range="cityList" range-key='name' :value="cityCode" @change="changeCity">
             <div class="picker">
-              {{cityList[cityCode].name}}
+              {{cityList[cityCode].name||0}}
             </div>
           </picker>
         </div>
@@ -29,9 +29,8 @@
       </swiper>
     </div>
     <div class='mendian_title'>门店展示</div>
-    <div class='mendian_info' style='text-align:center; color:#999;margin-top:30rpx;margin-bottom:60rpx;' v-if="mendianList">
-      <!-- v-if="mendianList.noData"> -->
-      <!-- {{mendianList.noData}} -->
+    <div class='mendian_info' style='text-align:center; color:#999;margin-top:30rpx;margin-bottom:60rpx;' v-if="mendianList.length==0">
+      此城市暂无门店信息
     </div>
     <div class='mendian_info' v-else>
       <!-- <import src='../../../components/shouye/shouye.wxml' /> -->
@@ -51,26 +50,9 @@ export default {
   data() {
     return {
       mendianList: [],
-      cityCode: 0,
-      imgUrls: []
-      // cityList: [
-      //   {
-      //     city: "北京市",
-      //     cityCode: "010",
-      //     houseItemCount: 77,
-      //     cityid: "d94bba14-dec1-11e5-bcc3-00163e1c066c",
-      //     lat: 39.9135,
-      //     lng: 116.404262
-      //   },
-      //   {
-      //     city: "银川市",
-      //     cityCode: "",
-      //     houseItemCount: 5,
-      //     cityid: "14a8db26-73d8-11e8-bf8c-7cd30ae45df2",
-      //     lat: 38.489977,
-      //     lng: 106.236771
-      //   }
-      // ]
+      imgUrls: [],
+      cityId: ''
+
     };
   },
   computed: {
@@ -78,22 +60,42 @@ export default {
   },
   methods: {
     changeCity(e) {
-      this.$store.commit('cityCode', e.mp.detail.value);
-      // this.cityCode = e.mp.detail.value
+      this.cityId = this.cityList[this.cityCode].id
+      this.$store.commit('cityCode', e.mp.detail.value - 0);
+      this.getMenDianList()
     },
     getCity() {
-      this.$store.dispatch('getCity');
+      return this.$store.dispatch('getCity');
     },
     getBanners() {
       this.$store.dispatch('getBanners').then(res => {
         console.log(`index banner`);
-        console.log(res);
         this.imgUrls = res.list;
       });
+    },
+    getMenDianList() {
+      this.$store.dispatch('getMenDianList', this.cityId).then(res => {
+        if (res.status.code === '200') {
+          if (res.result.list > 0) {
+            this.mendianList = res.result.list
+          } else {
+            this.mendianList = []
+          }
+        }
+      }).catch(error => {
+        console.log(error)
+      })
     }
   },
   created() {
-    this.getCity();
+    this.getCity().then(res => {
+      if (res.status.code === '200') {
+        this.cityId = res.result.list[0].id
+        this.getMenDianList()
+      }
+    }).catch(error => {
+      console.log(error)
+    });
     this.getBanners();
   }
 };

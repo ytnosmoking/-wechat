@@ -1,9 +1,9 @@
-function formatNumber (n) {
+function formatNumber(n) {
   const str = n.toString()
   return str[1] ? str : `0${str}`
 }
 
-export function formatTime (date) {
+export function formatTime(date) {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -20,5 +20,31 @@ export function formatTime (date) {
 
 export default {
   formatNumber,
-  formatTime
+  formatTime,
+  checkMobile
+}
+
+export const checkMobile = phone => {
+  if (!(/^1[3|4|5|7|8][0-9]{9}$/.test(phone))) {
+    return false
+  }
+  return true
+}
+
+export const showToast = (params) => {
+  wx.showToast({
+    title: params.title || '验证码错误',
+    icon: params.icon || 'none',
+    duration: params.time || 2000
+  })
+}
+
+export const setItem = (name, value) => {
+  wx.setStorageSync(name, value)
+}
+export const getItem = (name) => {
+  return wx.getStorageSync(name)
+}
+export const delItems = (name) => {
+  wx.removeStorageSync(name)
 }

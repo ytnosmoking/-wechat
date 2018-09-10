@@ -1,4 +1,5 @@
 <script>
+
 export default {
   created () {
     // 调用API从本地缓存中获取数据
@@ -8,6 +9,12 @@ export default {
 
     // eslint-disable-next-line
     console.log('app created and cache logs by setStorageSync')
+    if (!wx.getStorageSync('phone')) {
+      this.$router.push({
+        path: 'pages/login/index',
+        reLaunch: true
+      })
+    }
   }
 }
 </script>

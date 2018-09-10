@@ -8,5 +8,31 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/index",
+        "iconPath": "images/icons/icon-index-an.png",
+        "selectedIconPath": "images/icons/icon-index-light.png",
+        "text": "品牌公寓"
+      },
+      {
+        "pagePath": "pages/zhengzhu/index",
+        "iconPath": "images/icons/icon-zh-an.png",
+        "selectedIconPath": "images/icons/icon-zh-light.png",
+        "text": "整租合租"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/icons/icon-my-an.png",
+        "selectedIconPath": "images/icons/icon-my-light.png",
+        "text": "我的"
+      }
+    ],
+    "color": "#8e8e93",
+    "selectedColor": "#fbb174",
+    "backgroundColor": "#fff",
+    "borderStyle": "#ccc",
+    "position": "bottom"
   }
 }
