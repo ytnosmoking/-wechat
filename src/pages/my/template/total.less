@@ -1,0 +1,916 @@
+/*我的合同模板  */
+.myContract{
+  margin-bottom: 20rpx;
+}
+.myContract .contract{
+  padding: 20rpx 30rpx 10rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #f1eded;
+}
+.myContract .contract .common-fl{
+  float: left;
+  font-size: 32rpx;
+  color: #444;
+}
+.myContract .contract .futextColor{
+  float: right;
+  color: #999;
+  font-size: 26rpx;
+}
+.myContract .detail{
+  padding: 20rpx 20rpx 30rpx;
+  background-color: #fff;
+  font-size: 26rpx;
+  position: relative;
+}
+.myContract .detail .futextColor{
+  color: #999;
+}
+.myContract .detail .detail-price{
+  float: right;
+  margin-top: -46rpx;
+  color: #444;
+  margin-right: 20rpx;
+  font-weight: bold;
+}
+.myContract .detail .detail-current{
+  float: right;
+  margin-right: 20rpx;
+  color: #3888ea;
+}
+
+/*待缴账单模板  */
+.bill{
+  margin: 30rpx 20rpx 0;
+  padding: 30rpx 20rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+  background-color: #f6f6f6;
+}
+.bill image{
+  display: none;
+}
+.bill .bill-firstLine{
+  padding-left: 20rpx;
+  padding-right: 44rpx;
+}
+.bill .bill-firstLine .date_bd{
+  font-weight: bold;
+}
+.bill .bill-firstLine .bill-firstLine-pay{
+  color: #DD0C20;
+  font-weight: bold;
+}
+.bill .bill-secondLine{
+  background-color: #fff;
+  margin-top: 26rpx;
+  padding: 10rpx 44rpx 10rpx 26rpx;
+  border-radius: 10rpx;
+}
+.bill .bill-secondLine .futextColor{
+  font-size: 24rpx;
+}
+/* 缴费样式  */
+.bill-active image{
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 20rpx;
+}
+.bill-active .bill-firstLine{
+  width: 555rpx;
+  display: inline-block;
+}
+.bill-active .bill-firstLine .date_bd{
+  font-weight: bold;
+}
+.bill-active .bill-firstLine .bill-firstLine-pay{
+  color: #DD0C20;
+  font-weight: bold;
+}
+.bill-active .bill-secondLine{
+  width: 543rpx;
+  display: inline-block;
+}
+.bill-active .bill-secondLine .futextColor{
+  font-size: 24rpx;
+}
+
+
+
+/*  待缴账单  账单详情模板 */
+.billDetail{
+  width: 100%;
+  height: auto;
+  border: 1px solid #e2e2e2;
+  box-sizing: border-box;
+}
+
+.billDetail .bill_top{
+  width: 100%;
+  height: 160rpx;
+  line-height: 60rpx;
+  background: #fff;
+  margin-bottom: 2rpx;
+  text-align: center;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.billDetail .bill_top .bill_title{
+  width: 100%;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #fbb174;
+}
+
+.billDetail .bill_top .bill_time{
+  width: 100%;
+  height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.billDetail .bill_content{
+  width: 100%;
+  height: 300rpx;
+  background: #fff;
+  margin-bottom: 2rpx;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.billDetail .bill_content .bill_item{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+
+.billDetail .bill_content .bill_item .bill_label{
+  width: 40%;
+  height: 60rpx;
+  float: left;
+}
+
+.billDetail .bill_content .bill_item .bill_text{
+  width: 60%;
+  height: 60rpx;
+  float: right;
+  text-align: right;
+}
+
+.billDetail .bill_bottom{
+  width: 100%;
+  height: 160rpx;
+  line-height: 60rpx;
+  background: #fff;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.billDetail .bill_bottom .bill_money{
+  width: 100%;
+  height: 60rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+
+.billDetail .bill_bottom .bill_money .bill_money_label{
+  width: 40%;
+  height: 60rpx;
+  float: left;
+}
+
+.billDetail .bill_bottom .bill_money .bill_money_text{
+  width: 60%;
+  height: 60rpx;
+  float: right;
+  text-align: right;
+  color: #fbb174;
+}
+
+.billDetail .bill_bottom .bill_deadline{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: red;
+}
+
+
+/*公寓信息模板  */
+.part-content{
+  padding:20rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.part-content .house-img{
+  height: 320rpx;
+  border-radius: 16rpx;
+  position: relative;
+}
+.part-content .house-img .house-img-bg{
+  width: 100%;
+  height: 100%;
+}
+.part-content .house-img .house-img-ok{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  right: 60rpx;
+  top: 60rpx;
+}
+.part-content .house-content{
+  width: 100%;
+  overflow: hidden;
+  font-size: 32rpx;
+  padding-top: 20rpx;
+}
+.part-content .house-content .house-content-title{
+  width: 100%;
+  height: 56rpx;
+}
+.part-content .house-content .house-content-title .house-content-address-name{
+  max-width: 50%;
+  height: 56rpx;
+  line-height: 56rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  float: left;
+}
+.part-content .house-content .house-content-title label{
+  width: 30rpx;
+  height: 30rpx;
+  display: block;
+  float: left;
+  background-color: #fbb174;
+  text-align: center;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  color: #fff;
+  margin:8rpx 0 0 10rpx;
+}
+.part-content .house-content .house-content-title .house_type_zheng{
+  background-color: #60c43d;
+}
+.part-content .house-content .house-content-title .house_type_he{
+  background-color: #fbb174;
+}
+.part-content .house-content .house-content-title .zujins{
+  width: auto;
+  height: 56rpx;
+  line-height: 56rpx;
+  color: #fbb174;
+  font-weight: bold;
+  font-size: 28rpx;
+  text-align: right;
+  float: right;
+}
+.part-content .house-content .house-content-desc{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+  overflow: hidden;
+}
+.part-content .house-content .house-content-desc .type{
+   padding: 0 10rpx; 
+}
+.part-content .house-content .house-content-tese{
+  margin: 10rpx 0;
+}
+.part-content .house-content .house-content-tese text{
+  padding: 4rpx 8rpx;
+  border-radius: 6rpx;
+  border: 1px solid #999;
+  margin-right: 6rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+/*收藏板块定位  */
+.part-content .house-content .house-content-address{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #999;
+  overflow: hidden;
+}
+.part-content .house-content .house-content-address image{
+  display: block;
+  width: 32rpx;
+  height: 32rpx;
+  margin:4rpx 6rpx 4rpx 0;
+  float: left;
+}
+.part-content .house-content .house-content-address text{
+  display: block;
+  margin-right: 6rpx;
+  font-size: 24rpx;
+  color: #999;
+  float: left;
+}
+
+
+/* 预约 预定 公寓信息模板  */
+.yuyue-part-content{
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.yuyue-part-content .yuyue-house-content{
+  width: 100%;
+  height: 144rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+  display: flex;
+  padding:30rpx 20rpx 0;
+  box-sizing: border-box;
+  margin-bottom: 10rpx;
+}
+.yuyue-part-content .yuyue-house-img{
+  width: 212rpx;
+  height: 114rpx;
+  border-radius: 8rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.yuyue-part-content .yuyue-house-img .yuyue-house-img-bg{
+  width: 100%;
+  height: 100%;
+}
+.yuyue-part-content .yuyue-house-content-box{
+  flex: 1;
+  height: 114rpx;
+  float: left;
+}
+.yuyue-part-content .yuyue-house-content .yuyue-house-content-title{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+.yuyue-part-content .yuyue-house-content .yuyue-house-content-title .yuyue-house-content-title-box{
+   max-width: 50%; 
+  line-height: 40rpx;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+  display: block;
+  float: left;
+}
+.yuyue-part-content .yuyue-house-content .yuyue-house-content-title .yuyue-house-content-title-box .yuyue-name{
+  width: 100%; 
+   height: 40rpx; 
+  line-height: 40rpx;
+   white-space: nowrap; 
+  overflow: hidden;
+   text-overflow: ellipsis; 
+  display: block;
+  float: left;
+}
+.yuyue-part-content .yuyue-house-content .yuyue-house-content-title .yuyue-house-content-title-box label{
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  display: block;
+  float: left;
+  background-color: #fbb174;
+  text-align: center;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  color: #fff;
+  margin:8rpx 0 0 10rpx;
+}
+.yuyue-part-content .yuyue-house-content .yuyue-house-content-title .yuyue-zujins{
+  width: 50%;
+  height: 100%;
+  line-height: 100%;
+  color: #fbb174;
+  font-weight: bold;
+  font-size: 28rpx;
+  float: right;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 20rpx;
+}
+.yuyue-part-content .yuyue-house-content .yuyue-house-content-desc{
+  font-size: 24rpx;
+  color: #8e8e93;
+}
+/* .yuyue-part-content .yuyue-house-content .yuyue-house-content-desc .type{
+  padding: 0 10rpx;
+} */
+.yuyue-part-content .yuyue-house-content .yuyue-house-content-tese{
+  margin: 10rpx 0;
+}
+.yuyue-part-content .yuyue-house-content .yuyue-house-content-tese text{
+  padding: 4rpx 8rpx;
+  border-radius: 6rpx;
+  border: 1px solid #999;
+  margin-right: 6rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.yuyue-part-content .yuyue-house-content-item{
+  display: flex;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  padding: 4rpx 20rpx;
+}
+.yuyue-part-content .yuyue-house-content-address{
+  border-bottom: 1px solid #f1eded;
+  padding-bottom: 20rpx;
+}
+.yuyue-part-content .yuyue-house-content-item .yuyue-active{
+  color: red;
+}
+.yuyue-part-content .yuyue-house-content-item image{
+  display: block;
+  width: 32rpx;
+  height: 32rpx;
+  margin:4rpx 6rpx 0 0;
+  float: left;
+}
+.yuyue-part-content .yuyue-house-content-item text{
+  font-size: 24rpx;
+  color: #999;
+  float: left;
+  display: block;
+  flex: 1;
+  height: 40rpx;
+  
+}
+.yuyue-part-content .menu-btn{
+  width: 100%;
+  height: 100rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.yuyue-part-content .menu-btn-item{
+  width: 120rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8e8e93;
+  border-radius: 8rpx;
+  float: right;
+  margin-right: 40rpx;
+}
+.yuyue-part-content .menu-btn-call{
+  background: #fbb174;
+  color: #fff;
+}
+.yuyue-part-content .menu-btn-pay{
+  background: #60c43d;
+  color: #fff;
+}
+.yuyue-part-content .menu-btn-cancel{
+  background: #f6f6f6;
+  color: #c9c9c9;
+  margin: 0;
+}
+
+/*智能门锁模板  */
+.mensuo{
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.mensuo .mensuo-box{
+  width: 100%;
+  height: 500rpx;
+  padding:60rpx 20rpx;
+  background-color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+  padding-top:120rpx
+}
+.mensuo .mensuo-box .mensuo-in-box{
+  background-color: rgba(0,203,176,0.2);
+  display: inline-block;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -20rpx;
+  margin-left: -20rpx;
+  -webkit-animation: scaleout 1.7s infinite;
+  animation: scaleout 1.7s infinite;
+}
+.mensuo .mensuo-box .mensuo-in-box .mensuo-in{
+  display: inline-block;
+  width: 340rpx;
+  height: 340rpx;
+  margin-top: -20rpx;
+  margin-left: -20rpx;
+  background-color: rgba(0,203,176,0.4);
+  border-radius: 50%;
+  -webkit-animation: scaleout 1.7s infinite;
+  animation: scaleout 1.7s infinite;
+}
+.mensuo .mensuo-box .mensuo-box-circular{
+  width: 260rpx;
+  height: 260rpx;
+  border-radius: 50%;
+  background: #00cbb0;
+  margin: 0 auto;
+  position: relative;
+}
+.mensuo .mensuo-box .mensuo-box-circular image{
+  display: block;
+  width: 100rpx;
+  height: 120rpx;
+  padding-top: 60rpx;
+  margin: 0 auto;
+}
+.mensuo .mensuo-box .mensuo-box-circular text{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+.mensuo .mensuo-list{
+  width: 100%;
+  height: 120rpx;
+  margin: 20rpx 0;
+}
+.mensuo .mensuo-list .mensuo-list-title{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 28rpx;
+  padding-bottom: 20rpx;
+}
+
+.mensuo .mensuo-list .mensuo-list-sub{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #8e8e93;
+}
+.mensuo .bottom-btn{
+  width: 100%;
+  height: 200rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #8e8e93;
+  position: absolute;
+  left: 0;
+  bottom: 50rpx;
+}
+.mensuo .bottom-btn .bottom-btn-lock{
+  width: 200rpx;
+  height: 200rpx;
+  float: left;
+  margin: 0 80rpx;
+}
+.mensuo .bottom-btn .bottom-btn-psw{
+  width: 200rpx;
+  height: 200rpx;
+  float: right;
+  margin: 0 80rpx;
+}
+.mensuo .bottom-btn image{
+  display: block;
+  width: 32rpx;
+  height: 32rpx;
+}
+.mensuo .bottom-btn .bottom-btn-txt{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+/* 没有门锁状态  */
+.mensuo-nolock-img{
+  display: block;
+  width: 320rpx;
+  height: 320rpx;
+  margin: 320rpx auto 20rpx;
+}
+
+.mensuo-nolock-text{
+  width: 100%;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 34rpx;
+  color: #999;
+  text-align: center;
+}
+
+
+/*智能门锁 密码记录模板  */
+.mima-item{
+  width: 100%;
+  height: 120rpx;
+   border-bottom: 2rpx solid #e2e2e2; 
+}
+
+.mima-item:last-child{
+   border-bottom: 0; 
+}
+
+.mima-item .mima-item-top{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+}
+
+.mima-item .mima-item-top .mima-item-mima{
+  width: 80%;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
+  font-size: 28rpx;
+}
+
+.mima-item .mima-item-top .mima-item-status{
+  padding: 0 10rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: right;
+  font-size: 28rpx;
+}
+
+.mima-item .mima-item-bottom{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+}
+
+.mima-item .mima-item-bottom .mima-item-time{
+  width: 80%;
+  height: 60rpx;
+  line-height: 60rpx;
+  float: left;
+  font-size: 24rpx;
+  color: #8e8e93;
+}
+
+.mima-item .mima-item-bottom .mima-item-label{
+  padding: 0 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  float: right;
+  font-size: 28rpx;
+  text-align: center;
+}
+.mima-item .mima-item-bottom .singel{
+  color: #fff;
+  background: #00cbb0;
+  border-radius: 4rpx;
+}
+
+
+/*水电表模板  */
+.surface{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+
+}
+
+.surface swiper{
+  width: 100%;
+  height: 320rpx;
+}
+
+.surface .surface-title{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 50rpx 0 40rpx;
+  color: #8e8e93;
+}
+
+.surface .surface-box{
+  width: 100%;
+  height: 320rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  background: #fff
+}
+
+.surface .surface-box .surface-box-title{
+  width: 100%;
+  height: 99rpx;
+  background: #fbb174;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+  border-bottom: 1rpx solid #fff;
+  position: relative;
+}
+
+.surface .surface-box .surface-box-title label{
+  font-size: 24rpx;
+  display: block;
+  width: 90rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  text-align: center;
+  color: #fff;
+  background: #3f89fd;
+  border-top-left-radius: 8rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.surface .surface-box .surface-box-title .hotwater-label{
+  background: #ff6d6d;
+}
+
+.surface .surface-box .surface-box-title .midwater-label{
+  background: #fdd03f;
+}
+
+
+.surface .surface-box .surface-box-title text{
+  font-size: 26rpx;
+  color: #fff;
+  display: block;
+  width: 100%;
+  text-align: center;
+  height: 99rpx;
+  line-height: 99rpx;
+}
+
+.surface .surface-box .surface-box-circular{
+  width: 100%;
+  height: 220rpx;
+  border-bottom-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  color: #fff;
+  background: #fbb174;
+  text-align: center;
+}
+.surface .surface-box .surface-box-circular view:first-child{
+  font-size: 32rpx;
+  padding-top: 70rpx;
+  font-weight: 600;
+}
+.surface .surface-box .surface-box-circular view:last-child{
+  padding-top: 30rpx;
+  font-size: 26rpx;
+  font-weight: 600;
+}
+.surface .surface-all{
+  border-bottom: 1px solid #bbb;
+}
+.surface .surface-all .surface-all-yes{
+  display: flex;
+}
+.surface .surface-all .surface-all-yes:first-child{
+  border-bottom: 1px solid #bbb;
+}
+.surface .surface-all .surface-all-yes .surface-all-item{
+  width: 50%;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.surface .surface-all .surface-all-yes .surface-all-item:first-child{
+  border-right: 1px solid #bbb;
+}
+.surface .surface-all .surface-all-yes .surface-all-item view:first-child{
+  font-size: 26rpx;
+}
+.surface .surface-all .surface-all-yes .surface-all-item view:last-child{
+  margin-top: 30rpx;
+}
+.surface .surface-record{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 50rpx 0;
+  text-align: center;
+  color: #8e8e93;
+  font-size: 26rpx;
+}
+.surface .surface-button{
+  width: 100%;
+  height: 90rpx;
+  text-align: center;
+  padding:0 20rpx;
+  box-sizing: border-box;
+}
+.surface .surface-Recharge{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  border-radius: 8rpx;
+  background-color: #fbb174;
+  color: #fff;
+  font-size: 26rpx;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+
+
+/*保洁服务模板  */
+.cleaning{
+  background-color: #fff;
+  margin-bottom: 10rpx;
+}
+.cleaning .clear-title{
+  padding: 20rpx 30rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  border-bottom: 1rpx solid #f1eded;
+}
+.cleaning .clear-title text{
+  color: #404040;
+  font-size: 26rpx;
+}
+.cleaning .clear-title label{
+  float: right;
+  color: #E51C23;
+  font-size: 24rpx;
+}
+.cleaning .clear-ctn{
+  padding: 20rpx 30rpx 0;
+  font-size: 24rpx;
+  color: #404040;
+}
+.cleaning .clear-ctn view{
+  height: 46rpx;
+  line-height: 46rpx;
+  color: #aaa;
+}
+.clear-money{
+  float: right;
+  /* display: inline-block; */
+  color: #444;
+}
+/* .cleaning .clear-ctn view:first-child{
+  padding-left: 24rpx;
+} */
+.cleaning .clear-bt{
+  height: 46rpx;
+  line-height: 46rpx;
+  padding:30rpx 20rpx;
+}
+.cleaning .clear-bt text{
+  font-size: 24rpx;
+  color: #aaa;
+}
+.cleaning .clear-bt button{
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx; 
+  float: right;
+  padding: 0;
+  margin: 0;
+  font-size: 24rpx;
+  color: #515151;
+  background: #fff;
+  border: 1rpx solid #a3a3a3;
+}
+.cleaning .clear-bt .clear-btn-menu{
+  width: 280rpx;
+  height: 50rpx;
+  line-height: 50rpx; 
+  float: right;
+}
+.cleaning .clear-bt .clear-btn-menu button{
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx; 
+  float: left;
+  padding: 0;
+  margin: 0;
+  font-size: 24rpx;
+  color: #515151;
+  background: #fff;
+  margin-left: 20rpx;
+  border: 1rpx solid #a3a3a3;
+}
+
+/* 选项卡模板  */
+.nav{
+  width: 20%;
+  float: left;
+  height: 80rpx;
+}

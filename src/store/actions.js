@@ -59,6 +59,45 @@ export default {
       })
     })
   },
+  // collect
+  getCollect({ commit, state }) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.getCollect, { phone: state.userPhone }).then(res => {
+        resolve(res)
+      }).catch(error => {
+        resolve(error)
+      })
+    })
+  },
+  delCollect({ commit, state }, payload) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.delCollect, { houseId: payload, phone: state.userPhone }).then(res => {
+        resolve(res)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  },
+  // my/zhengzhu/about
+  getHouseInfo({ commit, state }, payload) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.getHouseInfo, { phone: state.userPhone, ...payload }).then(res => {
+        resolve(res)
+      }).catch(err => {
+        reject(err)
+      })
+    })
+  },
+  // my/zhengzhu/orderHouse
+  getOrderHouse({ commit, state }, payload) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.getOrderHouse, { ...payload }).then(res => {
+        resolve(res)
+      }).catch(err => {
+        reject(err)
+      })
+    })
+  },
   //
   getCode({
     commit,
@@ -96,7 +135,7 @@ export default {
         resolve(res)
       }).catch(err => {
         console.log(err)
-        reject(error)
+        reject(err)
       })
     })
   },

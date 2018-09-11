@@ -89,7 +89,7 @@ export default {
       }
     },
     login(e) {
-      // console.log(e)
+      console.log(e)
       if (!checkMobile(this.phoneNum)) {
         // 手机校验
         showToast({ title: '电话号码有误' });

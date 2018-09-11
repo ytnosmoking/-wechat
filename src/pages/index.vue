@@ -87,7 +87,8 @@ export default {
       })
     }
   },
-  created() {
+
+  onLoad() {
     this.getCity().then(res => {
       if (res.status.code === '200') {
         this.cityId = res.result.list[0].id

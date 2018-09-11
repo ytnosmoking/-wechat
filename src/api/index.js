@@ -9,5 +9,9 @@ export default {
   collectNum: '/v2/web/wechat_item/get_collection_list',
   footNum: '/v2/web/wechat_item/get_access_record',
   orderNum: '/v2/web/wechat_item/get_customer_list',
-  bookNum: '/v2/web/wechat_item/get_book_list_by_phone'
+  bookNum: '/v2/web/wechat_item/get_book_list_by_phone',
+  getCollect: '/v2/web/wechat_item/get_collection_list',
+  delCollect: '/v2/interlocution/house_collection/delete_by_id',
+  getHouseInfo: '/v2/web/house/get_by_id',
+  getOrderHouse: '/v2/web/house/get'
 }

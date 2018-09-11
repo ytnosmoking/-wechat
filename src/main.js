@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from '@/App'
 import store from '@/store'
-
+import 'animate.css/animate.min.css'
 import MpVueRouterPatch from 'mpvue-router-patch'
 
 Vue.use(MpVueRouterPatch)
