@@ -36,7 +36,7 @@
             <input bindtap="startTap" placeholder="请选择日期" disabled='true' value="{{startDate}}"></input>
           </div> -->
           <picker class="weui-btn" mode="multiSelector" :value="multiIndex" :range="multiArr" @columnchange="columnChange" @change="dateChange">
-            <input :value='time' placeholder='选择时间' />
+            <input :value='time' placeholder='选择时间' disabled />
           </picker>
         </div>
       </div>
@@ -44,7 +44,7 @@
         <div class='info_label'>备注</div>
         <div class='info_text' style='height:auto;'>
           <!-- <textarea bindinput='userBeizhu' placeholder='请输入备注（选填）' style='width:466rpx;'></textarea> -->
-          <input type='text' bindinput='userBeizhu' placeholder='请输入备注（选填）'></input>
+          <input type='text' v-model='userBeizhu' placeholder='请输入备注（选填）'>
         </div>
       </div>
     </div>
@@ -161,10 +161,8 @@ export default {
     },
     dateChange(e) {
       const indexArr = e.mp.detail.value;
-      console.log(indexArr);
       this.multiIndex = indexArr;
       const time = this.multiArr;
-      console.log(time);
       this.time =
         time[0][indexArr[0]].slice(0, -1) +
         '-' +
@@ -179,18 +177,17 @@ export default {
       // console.log(e.mp.detail)
     },
     columnChange(e) {
-      console.log(e);
       // 滑动年 月检测   日 2月 28  大小月
-      console.log(e.mp.detail.column);
-      console.log(e.mp.detail.value);
+      // console.log(e.mp.detail.column);
+      // console.log(e.mp.detail.value);
       const times = e.mp.detail.column;
       const value = e.mp.detail.value + 1;
       // 0 年 1 月 2 日
-      if (times === 0) {
-        this.multiIndex[times] = value - 1
-        e.mp.detail.value = this.multiIndex
-        this.dateChange(e)
-      }
+      // if (times === 0) {
+      //   this.multiIndex[times] = value - 1
+      //   e.mp.detail.value = this.multiIndex
+      //   this.dateChange(e)
+      // }
       if (times === 1) {
         const bigMonth = [1, 3, 5, 7, 8, 10, 12];
         const days = [];
@@ -203,7 +200,6 @@ export default {
             }
             days.push(iIndex + '日');
           });
-          console.log(111111)
         } else {
           const testArr = new Array(30).fill(1);
           testArr.forEach((item, index) => {
@@ -213,18 +209,33 @@ export default {
             }
             days.push(iIndex + '日');
           });
-          console.log(222222)
+          if (value !== 2) {
+            if (this.multiIndex[2] === 30) {
+              this.multiIndex[2] = 29
+            }
+          } else {
+            // 非闰年 减去两次
+            if (this.multiIndex[2] >= 28) {
+              this.multiIndex[2] = 27
+            }
+            days.pop()
+            days.pop()
+          }
         }
         this.multiIndex[times] = value - 1
         this.multiArr[2] = days;
         e.mp.detail.value = this.multiIndex
         this.dateChange(e)
-      }
-      if (times === 2) {
+      } else {
         this.multiIndex[times] = value - 1
         e.mp.detail.value = this.multiIndex
         this.dateChange(e)
       }
+      // if (times === 2) {
+      //   this.multiIndex[times] = value - 1
+      //   e.mp.detail.value = this.multiIndex
+      //   this.dateChange(e)
+      // }
     }
   },
   onShow() {

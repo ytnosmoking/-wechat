@@ -19,6 +19,8 @@ module.exports = {
   'rules': {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    // 'vue/no-parsing-error': [2, { 'x-invalid-end-tag': false }]
+    // 'vue/no-parsing-error': 0
   },
   globals: {
     App: true,
