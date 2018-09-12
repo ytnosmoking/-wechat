@@ -3,10 +3,7 @@ import Url from '../api'
 import { setItem } from '@/utils'
 export default {
   // login
-  login({
-    commit,
-    state
-  }, payload) {
+  login({ commit, state }, payload) {
     return new Promise((resolve, reject) => {
       console.log(payload)
       if (payload.code !== state.phoneCode) {
@@ -16,11 +13,8 @@ export default {
         phone: payload.phoneNum,
         code: state.phoneCode,
         password: payload.phonePass
-      }).then(res => {
-        resolve(res)
-      }).catch(error => {
-        reject(error)
-      })
+      }).then(res => resolve(res))
+        .catch(error => reject(error))
     })
   },
   getUserHouseInfo({
@@ -38,35 +32,21 @@ export default {
       })
     })
   },
-  // my/index
-  // getCollectNum({ commit, state }) {
-  //   return new Promise((resolve, reject) => {
-  //     request.post(Url.getCollectNum, { phone: state.userPhone }).then(res => {
-  //       resolve(res)
-  //     }).catch(error => {
-  //       reject(error)
-  //     })
-  //   })
-  // },
   getNum({ commit, state }, payload) {
     console.log(payload)
     return new Promise((resolve, reject) => {
       const key = payload === 'bookNum' ? 'zukePhone' : 'phone'
-      request.post(Url[payload], { [key]: state.userPhone }).then(res => {
-        resolve(res)
-      }).catch(error => {
-        reject(error)
-      })
+      request.post(Url[payload], { [key]: state.userPhone })
+        .then(res => resolve(res))
+        .catch(error => reject(error))
     })
   },
   // collect
   getCollect({ commit, state }) {
     return new Promise((resolve, reject) => {
-      request.post(Url.getCollect, { phone: state.userPhone }).then(res => {
-        resolve(res)
-      }).catch(error => {
-        resolve(error)
-      })
+      request.post(Url.collectNum, { phone: state.userPhone })
+        .then(res => resolve(res))
+        .catch(error => resolve(error))
     })
   },
   delCollect({ commit, state }, payload) {
@@ -78,10 +58,37 @@ export default {
       })
     })
   },
+  // getFoot
+  getFoot({ commit, state }) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.footNum, { phone: state.userPhone }).then(res => {
+        resolve(res)
+      }).catch(error => {
+        resolve(error)
+      })
+    })
+  },
+  //  cancelOrder 预约
+  cancelOrder({ commit, state }, payload) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.cancelOrder, { ...payload })
+        .then(res => resolve(res))
+        .catch(error => reject(error))
+    })
+  },
+  // cancelBook 预定
+  cancelBook({ commit, state }, payload) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.cancelBook, { ...payload })
+        .then(res => resolve(res))
+        .catch(error => reject(error))
+    })
+  },
   // my/zhengzhu/about
   getHouseInfo({ commit, state }, payload) {
+    payload.phone = state.userPhone
     return new Promise((resolve, reject) => {
-      request.post(Url.getHouseInfo, { phone: state.userPhone, ...payload }).then(res => {
+      request.post(Url.getHouseInfo, { ...payload }).then(res => {
         resolve(res)
       }).catch(err => {
         reject(err)
@@ -95,6 +102,24 @@ export default {
         resolve(res)
       }).catch(err => {
         reject(err)
+      })
+    })
+  },
+  bookHouse({ commit, state }, payload) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.bookHouse, { ...payload }).then(res => {
+        resolve(res)
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  },
+  bookPay({ commit, state }, payload) {
+    return new Promise((resolve, reject) => {
+      request.post(Url.bookPay, { ...payload }).then(res => {
+        resolve(res)
+      }).catch(error => {
+        reject(error)
       })
     })
   },

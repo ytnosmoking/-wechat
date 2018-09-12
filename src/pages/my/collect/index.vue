@@ -1,7 +1,7 @@
 <template>
   <div class='container'>
     <div class='shoucang_list' v-if='fangyuanList.length>0'>
-      <collect :fangyuanList="fangyuanList"></collect>
+      <collect :fangyuanList="fangyuanList" @getLoad="getCollect" collectType="true"></collect>
     </div>
     <div class='no_content' v-else>
       没有任何内容！
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Bus from '@/pages/bus'
+// import Bus from '@/pages/bus'
 import collect from '../template/collect';
 export default {
   name: 'collect',
@@ -24,7 +24,8 @@ export default {
   },
   methods: {
     getCollect() {
-      return this.$store.dispatch('getCollect').then(res => {
+      console.log(111)
+      this.$store.dispatch('getCollect').then(res => {
         if (res.status.code === '200') {
           this.fangyuanList = res.result.houseArr
         }
@@ -35,10 +36,10 @@ export default {
   },
   onShow() {
     this.getCollect()
-    const that = this
-    Bus.$on('getLoad', () => {
-      that.getCollect()
-    })
+    // const that = this
+    // Bus.$on('getLoad', () => {
+    //   that.getCollect()
+    // })
   },
   mounted () {
 

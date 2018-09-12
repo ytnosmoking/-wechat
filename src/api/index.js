@@ -10,8 +10,12 @@ export default {
   footNum: '/v2/web/wechat_item/get_access_record',
   orderNum: '/v2/web/wechat_item/get_customer_list',
   bookNum: '/v2/web/wechat_item/get_book_list_by_phone',
-  getCollect: '/v2/web/wechat_item/get_collection_list',
+  // getCollect: '/v2/web/wechat_item/get_collection_list',
   delCollect: '/v2/interlocution/house_collection/delete_by_id',
   getHouseInfo: '/v2/web/house/get_by_id',
-  getOrderHouse: '/v2/web/house/get'
+  getOrderHouse: '/v2/web/house/get',
+  bookHouse: '/v2/web/wechat_item/yu_yue',
+  bookPay: '/v2/web/wechat_item/zuke_book_insert',
+  cancelOrder: '/v2/web/wechat_item/cancel_yuyue',
+  cancelBook: '/v2/house/house_shouding/return_reservation'
 }

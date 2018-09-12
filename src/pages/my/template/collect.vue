@@ -9,7 +9,7 @@
           @tap='viewMendianDetail(fangyuanItem)'>
           <image v-if='fangyuanItem.picObj.big' class='house-img-bg' :src='fangyuanItem.picObj.big'></image>
           <image v-else class='house-img-bg' src='/images/default/fang_default.png'></image>
-          <image class='house-img-ok' :data-id='fangyuanItem.id'
+          <image v-if="collectType" class='house-img-ok' :data-id='fangyuanItem.id'
             @tap.stop='removeCollect(fangyuanItem)' src='/images/collect/collect_02.png'></image>
         </div>
         <div class='house-content'>
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import Bus from '@/pages/bus'
+// import Bus from '@/pages/bus'
 export default {
   name: 'collect-template',
   data() {
@@ -49,6 +49,10 @@ export default {
       default() {
         return [];
       }
+    },
+    collectType: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -67,7 +71,7 @@ export default {
       const houseId = item.id
       this.$store.dispatch('delCollect', houseId).then(res => {
         if (res.status.code === '200') {
-          Bus.$emit('getLoad')
+          this.$emit('getLoad')
         }
       }).catch(error => {
         console.log(error)

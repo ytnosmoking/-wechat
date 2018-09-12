@@ -1,18 +1,22 @@
 <template>
  <div>
-   this is onLineBook
+  <book bookType="pay" bookText="支付定金"></book>
  </div>
 </template>
 
 <script>
-  export default {
-    name: 'onLineBook',
-    data () {
-      return {
-  
-      }
+import book from './book'
+export default {
+  name: 'onLineBook',
+  components: {
+    book
+  },
+  data () {
+    return {
+
     }
   }
+}
 </script>
 
 <style lang='less' scoped>

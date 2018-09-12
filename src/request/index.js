@@ -22,7 +22,7 @@ request.interceptors.request.use(config => {
 
 request.interceptors.response.use(response => {
   wx.hideNavigationBarLoading()
-  wx.hideLoading()
+  wx.hideToast()
   return Promise.resolve(response.data)
 }, error => {
   wx.hideNavigationBarLoading()

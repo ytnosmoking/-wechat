@@ -1,82 +1,89 @@
 module.exports = [{
   path: 'pages/my/index',
   config: {
-    navigationBarTitleText: 'myPage'
+    navigationBarTitleText: '我的'
   }
 }, {
   path: 'pages/my/collect/index',
   config: {
-    navigationBarTitleText: 'myCollect'
+    navigationBarTitleText: '收藏'
   }
 }, {
   path: 'pages/my/book/index',
   config: {
-    navigationBarTitleText: 'myBook'
+    navigationBarTitleText: '预定'
   }
 }, {
   path: 'pages/my/foot/index',
   config: {
-    navigationBarTitleText: 'myFoot'
+    navigationBarTitleText: '足迹'
   }
 }, {
   path: 'pages/my/order/index',
   config: {
-    navigationBarTitleText: 'myOrder'
+    navigationBarTitleText: '预约'
   }
 }, {
   path: 'pages/my/contract/index',
   config: {
-    navigationBarTitleText: 'myContracnt'
+    navigationBarTitleText: '我的合同'
+  }
+}, {
+  path: 'pages/my/contract/detail',
+  config: {
+    navigationBarTitleText: '合同详细'
   }
 }, {
   path: 'pages/my/bill/index',
   config: {
-    navigationBarTitleText: 'myBill'
+    navigationBarTitleText: '代缴账单'
   }
 }, {
   path: 'pages/my/clean/index',
   config: {
-    navigationBarTitleText: 'myClean'
+    navigationBarTitleText: '保洁服务'
   }
 }, {
   path: 'pages/my/fix/index',
   config: {
-    navigationBarTitleText: 'myFix'
+    navigationBarTitleText: '维修服务'
   }
 }, {
   path: 'pages/my/complain/index',
   config: {
-    navigationBarTitleText: 'myComplain'
+    navigationBarTitleText: '建议投诉'
   }
 }, {
   path: 'pages/my/lock/index',
   config: {
-    navigationBarTitleText: 'myLock'
+    navigationBarTitleText: '智能门锁'
   }
 }, {
   path: 'pages/my/electric/index',
   config: {
-    navigationBarTitleText: 'myElectric'
+    navigationBarTitleText: '智能电表'
   }
 }, {
   path: 'pages/my/water/index',
   config: {
-    navigationBarTitleText: 'myWater'
+    navigationBarTitleText: '智能水表'
   }
 }, {
   path: 'pages/index', // 页面路径，同时是 vue 文件相对于 src 的路径
-  navigationBarTitleText: 'indexPage'
+  config: {
+    navigationBarTitleText: '品牌公寓'
+  }
 },
 {
   path: 'pages/maps/maps',
   config: {
-    navigationBarTitleText: 'mapsPage'
+    navigationBarTitleText: '地图'
   }
 },
 {
   path: 'pages/zhengzhu/index',
   config: {
-    navigationBarTitleText: 'zhengZhuPage'
+    navigationBarTitleText: '整租'
   }
 },
 {
@@ -98,12 +105,12 @@ module.exports = [{
 {
   path: 'pages/my/logOut',
   config: {
-    navigationBarTitleText: 'logOutPage'
+    navigationBarTitleText: '退出'
   }
 }, {
   path: 'pages/login/index',
   config: {
-    navigationBarTitleText: 'logInPage'
+    navigationBarTitleText: '登陆'
   }
 },
 

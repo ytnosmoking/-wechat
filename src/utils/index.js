@@ -37,6 +37,9 @@ export const showToast = (params) => {
     icon: params.icon || 'none',
     duration: params.time || 2000
   })
+  setTimeout(() => {
+    wx.hideToast()
+  }, params.time || 2000)
 }
 
 export const setItem = (name, value) => {

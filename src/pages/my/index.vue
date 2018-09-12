@@ -9,7 +9,7 @@
           <image src='../image/mine/mine_23.png'></image>
         </div>
         <!--我的昵称-->
-        <div class="loginPhone">{{chooseRoomInfo.zukeName}} {{userPhone}}</div>
+        <div class="loginPhone" @tap="changeMix">{{chooseRoomInfo.zukeName}} {{userPhone}}</div>
       </div>
       <!--我的头像下面的 收藏、足迹、预约、预定-->
       <div class='mine-items'>
@@ -60,6 +60,10 @@
           <div class='clear'></div>
         </div>
       </div>
+      <!-- <son-child @fromson="getSon">
+        <div class="father">---</div>
+      </son-child> -->
+      
     </div>
     <!--遮罩  -->
     <div class='model animated' :class="showModel?'zoomIn':'zoomOut'" v-show="showModel" @tap="hideModel"></div>
@@ -124,10 +128,29 @@
 </template>
 
 <script>
+// import sonChild from './comp1'
 import { mapGetters } from 'vuex';
 import { delItems, getItem, setItem, showToast } from '@/utils';
+
+/* const mix = {
+  data() {
+    return {
+      mix: 1234,
+      father: 1
+    }
+  },
+  methods: {
+    changeMix() {
+      console.log(this.mix)
+      this.mix++
+      console.log(this.mix)
+    }
+  }
+}*/
+
 export default {
   name: 'my',
+  // mixins: [mix],
   data() {
     return {
       userHouseInfo: [],
@@ -202,10 +225,18 @@ export default {
       ischeck: 0
     };
   },
+  // components: {
+  //   sonChild
+  // },
   computed: {
     ...mapGetters(['userPhone'])
   },
   methods: {
+    // getSon() {
+    //   console.log('from son')
+    //   this.father++
+    //   console.log(this.father)
+    // },
     logOut() {
       delItems('phone');
       this.$router.push({
@@ -290,4 +321,12 @@ export default {
 
 <style lang='less' scoped>
 @import "./index.less";
+.father {
+  width: 100%;
+  height: 50px;
+  font-size: 14rpx;
+  color: #fff;
+  background-color: red;
+  text-align: center;
+}
 </style>
